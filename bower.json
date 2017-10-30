@@ -1,0 +1,21 @@
+{
+  "name": "sass-susy",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "farruh Mirisoev <farruh.mirisoev@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.1"
+  }
+}

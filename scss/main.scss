@@ -1,0 +1,65 @@
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "reset";
+@import "variables";
+
+body {
+  .wrapper {
+    .coverHeader {
+      background-color: $primColor;
+    }
+    .header {
+      @include container;
+      min-height: 100px;
+      .headerContent {
+        padding-top: 30px;
+      }
+      .language {
+        background: #fff;
+        height: 52px;
+        width: 91px;
+        float: right;
+        text-align: center;
+        ul {
+          padding-top: 20%;
+        }
+        li {
+          display: none;
+          &:nth-child(1){
+            display: block;
+          }
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+        }
+        &:hover {
+          ul li {
+            display: block;
+          }
+        }
+      }
+      .logo {
+        display: inline-block;
+        vertical-align: bottom;
+        img {
+          max-width: 100%;
+        }
+      }
+      .logoText{
+        display: inline-block;
+        vertical-align: super;
+        span {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: bold;
+          margin-left: 10px;
+          font-size: 20px;
+          color: #fff;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

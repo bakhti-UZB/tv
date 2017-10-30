@@ -1,0 +1,54 @@
+@mixin clearfix {
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+@mixin innerbox($marginLeftRight:0, $paddingLeftRight:0) {
+    max-width: container();
+    margin: 0 auto;
+    @if $marginLeftRight==1 {
+        $marginLeftRight: gutter(12);
+        margin-left: $marginLeftRight;
+        margin-right: $marginLeftRight;
+    }
+    @if $paddingLeftRight==1 {
+        $paddingLeftRight: gutter(12);
+        padding-left: $paddingLeftRight;
+        padding-right: $paddingLeftRight;
+    }
+}
+
+@mixin img_res {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@mixin color_btn($color:$blue_btn, $textColor:#fff) {
+    display: inline-block;
+    padding: 7px 10px;
+    border: none;
+    border-color: $color;
+    // border-radius: 4px;
+    background-color: $color;
+    color: $textColor;
+    // font-weight: bold;	
+
+    &:hover {
+        background-color: darken($color, 5%);
+        border-color: darken($color, 5%);
+        color: $textColor;
+        text-decoration: none;
+    }
+    .fa {
+        font-size: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+}
+
