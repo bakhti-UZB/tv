@@ -2,15 +2,23 @@
 @import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
 @import "reset";
 @import "variables";
+@import "fonts";
+@import "grids";
+@import "mixin";
+@import "media";
 
 body {
-  .wrapper {
+  font-family: $mainFont;
+  a {
+    text-decoration: none;
+  }
+  .wrapper{
     .coverHeader {
       background-color: $primColor;
+      height: 100px;
     }
     .header {
-      @include container;
-      min-height: 100px;
+      @include innerbox(0,1);
       .headerContent {
         padding-top: 30px;
       }
@@ -50,16 +58,90 @@ body {
         display: inline-block;
         vertical-align: super;
         span {
-          font-family: 'Open Sans', sans-serif;
           font-weight: bold;
-          margin-left: 10px;
+          margin-left: 8px;
           font-size: 20px;
           color: #fff;
         }
-        a {
-          text-decoration: none;
+      }
+    }
+    .coverNavbar {
+      background-color: $navColor;
+      min-height: 60px;
+    }
+    .navbar {
+      @include clearfix;
+      @include innerbox(0,1);
+      width: 100%;
+      height: 100%;
+      #mainMenu {
+        float: left;
+      }
+      #mainMenu ul {
+        list-style-type: none;
+        li {
+          display: inline-block;
+          padding-top: 23px;
+          padding-bottom: 23px;
+          a {
+            text-decoration: none;
+            text-transform: capitalize;
+            color: $primText;
+            font-size: 14px;
+            font-weight: 400;
+            padding-right: 40px;
+          }
+        }
+      }
+      #searchForm {
+        float: right;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        input {
+          width: 220px;
+          height: 40px;
+          border: 1px solid $primText;
+          border-radius: 30px;
+          outline: none;
+          font-size: 14px;
+          padding: 0 10px;
         }
       }
     }
+    .slider {
+      img {
+        @include img_res;
+      }
+    }
+    .coverServices {
+      background-color: $navColor;
+      min-height: 164px;
+    }
+    @include with-layout(7){
+
+      .services {
+        @include innerbox(0,1);
+        ul {
+          @include clearfix;
+        }
+        li{
+          @include gallery(1 inside no-gutters);
+          text-align: center;
+          padding: 35px 0;
+        }
+        li:hover {
+          background-color: $primColor;
+        }
+        .service_img {
+          margin-bottom: 20px;
+        }
+        .service_name {
+          color: $primText;
+          font-size: 14px;
+          font-family: $mainFont;
+        }
+      }
+    }
+
   }
 }

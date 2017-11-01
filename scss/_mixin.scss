@@ -37,7 +37,7 @@
     // border-radius: 4px;
     background-color: $color;
     color: $textColor;
-    // font-weight: bold;	
+    // font-weight: bold;
 
     &:hover {
         background-color: darken($color, 5%);
@@ -51,4 +51,3 @@
         vertical-align: middle;
     }
 }
-
