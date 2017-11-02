@@ -13,12 +13,14 @@ body {
     text-decoration: none;
   }
   .wrapper{
+    .container {
+      @include innerbox(0,1);
+    }
     .coverHeader {
       background-color: $primColor;
       height: 100px;
     }
     .header {
-      @include innerbox(0,1);
       .headerContent {
         padding-top: 30px;
       }
@@ -71,7 +73,6 @@ body {
     }
     .navbar {
       @include clearfix;
-      @include innerbox(0,1);
       width: 100%;
       height: 100%;
       #mainMenu {
@@ -118,9 +119,7 @@ body {
       min-height: 164px;
     }
     @include with-layout(7){
-
       .services {
-        @include innerbox(0,1);
         ul {
           @include clearfix;
         }
@@ -141,7 +140,112 @@ body {
           font-family: $mainFont;
         }
       }
+    };
+    .coverTerritory {
+      background-color: #ffffff;
+      // min-height: 450px;
     }
-
+    @include with-layout(7 inside no-gutters){
+      .territory_control {
+        @include clearfix;
+        padding-top: 50px;
+        padding-bottom: 0;
+        .territory_heading {
+          padding-bottom: 40px;
+          span {
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #000000;
+            font-weight: 600;
+          }
+        }
+        .territory_left {
+          @include span(5);
+          @include with-layout(5){
+            .map {
+              @include span(3);
+            }
+            .map_content {
+              @include span(2 last);
+              .territorial_info {
+                min-width: 240px;
+                min-height: 150px;
+                padding: 130px 55px 130px 25px;
+                a {
+                  display: block;
+                  padding-bottom: 20px;
+                  text-decoration: underline;
+                  color: $primColor;
+                  font-size: 14px;
+                  font-weight: 600;
+                }
+                p {
+                  text-align: justify;
+                  overflow: hidden;
+                  color: $textInMap;
+                  font-size: 12px;
+                  line-height: 14px;
+                }
+                .button_more {
+                  display: inline-block;
+                  margin-top: 30px;
+                  width: 130px;
+                  height: 40px;
+                  border: 2px solid $navColor;
+                  border-radius: 40px;
+                  text-align: center;
+                  a {
+                    text-decoration: none;
+                    display: block;
+                    padding: 13px 0;
+                    text-transform: capitalize;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: $navColor;
+                  }
+                }
+              }
+            }
+          };
+        }
+        .territory_right {
+          @include span(2 last);
+          border-left: 1px solid $borderColor;
+          margin-left: -1px;
+          .territory_right_services {
+            padding-left: 40px;
+            .territory_services{
+              #first_service {
+                padding-bottom: 20px;
+                padding-top: 0;
+              }
+              #last_service {
+                border-bottom: none;
+              }
+              .service {
+                padding-bottom: 20px;
+                padding-top: 20px;
+                border-bottom: 1px solid $borderColor;
+                a {
+                  display: block;
+                  color: $textInMap;
+                }
+                div {
+                  display: inline-block;
+                  vertical-align: middle;
+                }
+                .territory_img {
+                  width: 80px;
+                }
+                .territory_service_name {
+                  width: 160px;
+                }
+              }
+            }
+          }
+        }
+      }
+    };
   }
 }
