@@ -13,6 +13,13 @@ body {
     text-decoration: none;
   }
   .wrapper{
+    .headings {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 20px;
+      color: #000000;
+      font-weight: 600;
+    }
     .container {
       @include innerbox(0,1);
     }
@@ -116,7 +123,7 @@ body {
     }
     .coverServices {
       background-color: $navColor;
-      min-height: 164px;
+      // min-height: 164px;
     }
     @include with-layout(7){
       .services {
@@ -127,17 +134,31 @@ body {
           @include gallery(1 inside no-gutters);
           text-align: center;
           padding: 35px 0;
+          a{
+            display: block;
+            line-height: 100px;
+            vertical-align: middle;
+            box-sizing:border-box;
+            .inner{
+              display: block;
+              line-height: normal;
+              min-height: 105px;
+            }
+          }
         }
         li:hover {
           background-color: $primColor;
         }
         .service_img {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
         .service_name {
           color: $primText;
-          font-size: 14px;
+          font-size: 13px;
+          line-height: 17px;
           font-family: $mainFont;
+          font-weight: 400;
+          padding: 0 30px;
         }
       }
     };
@@ -152,13 +173,6 @@ body {
         padding-bottom: 0;
         .territory_heading {
           padding-bottom: 40px;
-          span {
-            text-align: left;
-            text-transform: uppercase;
-            font-size: 18px;
-            color: #000000;
-            font-weight: 600;
-          }
         }
         .territory_left {
           @include span(5);
@@ -181,7 +195,7 @@ body {
                   font-weight: 600;
                 }
                 p {
-                  text-align: justify;
+                  text-align: left;
                   overflow: hidden;
                   color: $textInMap;
                   font-size: 12px;
@@ -222,6 +236,7 @@ body {
               }
               #last_service {
                 border-bottom: none;
+                padding-bottom: 0;
               }
               .service {
                 padding-bottom: 20px;
@@ -240,9 +255,63 @@ body {
                 }
                 .territory_service_name {
                   width: 160px;
+                  span {
+                    font-size: 14px;
+                    font-weight: 600;
+                  }
                 }
               }
             }
+          }
+        }
+      }
+    };
+    .coverNews {
+      background-color: $newsBackground;
+    }
+    @include with-layout(4 0.1){
+      .news {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        img {
+          @include img_res;
+        }
+        .news_content {
+          @include clearfix;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+        .column {
+          @include gallery(1);
+          .news_detail {
+            padding: 15px 70px 15px 15px;
+            background-color: #ffffff;
+          }
+          .news_title {
+            padding-bottom: 18px;
+            span {
+              font-size: 14px;
+            }
+          }
+          .news_info {
+            height: 28px;
+            margin-bottom: 18px;
+            overflow-y: hidden;
+            text-overflow: ellipsis;
+            p {
+              font-size: 12px;
+              color: $textInMap;
+            }
+          }
+          .news_date {
+            p {
+              color: $textInMap;
+              opacity: .6;
+              font-size: 12px;
+            }
+          }
+          .news_add {
+            @include img_res;
           }
         }
       }
